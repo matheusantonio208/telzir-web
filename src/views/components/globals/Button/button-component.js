@@ -3,9 +3,9 @@ import React from 'react';
 
 import { Container, Text } from './button-style.js';
 
-export default function Button({ children }) {
+export default function Button({ children, ...props }) {
   return (
-    <Container>
+    <Container {...props}>
       <Text>{children}</Text>
     </Container>
   );

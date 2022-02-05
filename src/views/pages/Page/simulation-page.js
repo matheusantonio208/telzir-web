@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Select from 'react-select';
+import { toast } from 'react-toastify';
 
 import api from '#services/axios.js';
 
@@ -9,6 +10,8 @@ import landingPageImage from '#assets/img/landing-page.png';
 import talkMore120Img from '#assets/img/talkMore120Img.png';
 import talkMore30Img from '#assets/img/talkMore30Img.png';
 import talkMore60Img from '#assets/img/talkMore60Img.png';
+
+import Footer from '#pages/_layouts/footer-layout.js';
 
 import Button from '#components/globals/Button/button-component.js';
 import Header from '#components/globals/Header/header-component.js';
@@ -38,6 +41,9 @@ export default function SimulationPage() {
   const [statePrices, setStatePrices] = useState([]);
   const [stateSimulation, setStateSimulation] = useState(false);
 
+  const simulationSection = useRef();
+  const pricePlansSection = useRef();
+
   const handleChangeAreaCodeOrigin = (selectedOption) => {
     setStateAreaCodeOrigin(selectedOption);
   };
@@ -52,20 +58,26 @@ export default function SimulationPage() {
   };
 
   const handlePrice = async () => {
-    const response = await api.post('/simulation', {
-      areaCodeOrigin: stateAreaCodeOrigin.value,
-      areaCodeDestiny: stateAreaCodeDestiny.value,
-      callDuration: stateCallDuration.value,
-    });
-    const { data } = response;
+    try {
+      const response = await api.post('/simulation', {
+        areaCodeOrigin: stateAreaCodeOrigin.value,
+        areaCodeDestiny: stateAreaCodeDestiny.value,
+        callDuration: stateCallDuration.value,
+      });
 
-    setStatePrices(data);
+      const { data } = response;
+      setStatePrices(data);
+      pricePlansSection.current.scrollIntoView();
+    } catch (error) {
+      setStateSimulation(false);
+      toast.error('Fee not registered for the area codes informed');
+    }
   };
 
   return (
     <>
       <Header />
-      <Container>
+      <Container style={{ height: 1000 }}>
         <AboutPlan>
           <h1>Fale muito +</h1>
           <h1>Pague muito -</h1>
@@ -73,12 +85,14 @@ export default function SimulationPage() {
             Com os planos pré-pagos da Telzir, você fala o quanto quiser com um
             plano fixo, e só paga os minutos excedentes
           </p>
-          <Button>Simular Planos</Button>
+          <Button onClick={() => simulationSection.current.scrollIntoView()}>
+            Simular Planos
+          </Button>
         </AboutPlan>
         <img src={landingPageImage} />
       </Container>
 
-      <SectionSimulation>
+      <SectionSimulation ref={simulationSection}>
         <h1>Informe os dados da ligação</h1>
         <AreaCodes>
           <SelectCode>
@@ -121,7 +135,7 @@ export default function SimulationPage() {
         </button>
       </SectionSimulation>
 
-      <Container>
+      <Container ref={pricePlansSection}>
         <CardGroup simulation={stateSimulation}>
           <Card simulation={stateSimulation}>
             <img src={talkMore30Img} />
@@ -184,6 +198,7 @@ export default function SimulationPage() {
           </Card>
         </CardGroup>
       </Container>
+      <Footer />
     </>
   );
 }
