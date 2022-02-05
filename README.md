@@ -3,7 +3,7 @@
 "Simplicity is the ultimate sophistication" -Leonardo da Vinci
 </p>
 <p align="center">
-<a href="https://github.com/matheusantonio208/telzir-web" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/matheusantonio208/atlantjs.dev-setup?style=social"></a>
+<a href="https://github.com/matheusantonio208/telzir-web" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/starsmatheusantonio208/telzir-web?style=social"></a>
 <a href="https://github.com/matheusantonio208/telzir-web/blob/main/LICENSE"><img src="https://img.shields.io/github/license/matheusantonio208/atlantjs.dev-setup?label=License&message=MIT&color=red" alt="License"></a>
 <a href="https://github.com/matheusantonio208/telzir-web/archive/main.zip" target="__blank"><img src="https://img.shields.io/static/v1?label=Download&message=ZIP&color=red" alt="atlantjs.dev-setup preview"></a>
 </p>
