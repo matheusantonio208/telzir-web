@@ -1,11 +1,11 @@
 <p align="center">
-<a href="https://github.com/matheusantonio208/telzir-api"><img src="https://github.com/matheusantonio208/telzir-api/blob/main/.brand/logo-atlantjs-git.svg" alt="A beautiful and minimal node js framework." width="350"></a><br>
+<a href="https://github.com/matheusantonio208/telzir-web"><img src="https://github.com/matheusantonio208/telzir-web/blob/main/.brand/logo.png" alt="A beautiful and minimal site Telzir." width="350"></a><br>
 "Simplicity is the ultimate sophistication" -Leonardo da Vinci
 </p>
 <p align="center">
-<a href="https://github.com/matheusantonio208/telzir-api" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/matheusantonio208/atlantjs.dev-setup?style=social"></a>
-<a href="https://github.com/matheusantonio208/telzir-api/blob/main/LICENSE"><img src="https://img.shields.io/github/license/matheusantonio208/atlantjs.dev-setup?label=License&message=MIT&color=red" alt="License"></a>
-<a href="https://github.com/matheusantonio208/telzir-api/archive/main.zip" target="__blank"><img src="https://img.shields.io/static/v1?label=Download&message=ZIP&color=red" alt="atlantjs.dev-setup preview"></a>
+<a href="https://github.com/matheusantonio208/telzir-web" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/matheusantonio208/atlantjs.dev-setup?style=social"></a>
+<a href="https://github.com/matheusantonio208/telzir-web/blob/main/LICENSE"><img src="https://img.shields.io/github/license/matheusantonio208/atlantjs.dev-setup?label=License&message=MIT&color=red" alt="License"></a>
+<a href="https://github.com/matheusantonio208/telzir-web/archive/main.zip" target="__blank"><img src="https://img.shields.io/static/v1?label=Download&message=ZIP&color=red" alt="atlantjs.dev-setup preview"></a>
 </p>
 
 <p align="center">
