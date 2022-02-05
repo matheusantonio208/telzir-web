@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // Adicionar Toaster
 export const Container = styled.div`
   display: flex;
@@ -41,7 +41,14 @@ export const CardGroup = styled.div`
 
   div:nth-child(2) {
     padding-top: 80px;
-    height: 660px;
+    ${(props) =>
+      props.simulation
+        ? css`
+            height: 660px;
+          `
+        : css`
+            height: 360px;
+          `};
     border: 2px solid #43b1fa;
     img {
       width: 350px;
@@ -61,11 +68,16 @@ export const CardGroup = styled.div`
 export const Card = styled.div`
   border: solid 1px #ccc;
   border-radius: 8px;
-  height: 600px;
+  ${(props) =>
+    props.simulation
+      ? css`
+          height: 600px;
+        `
+      : css`
+          height: 300px;
+        `};
   width: 380px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
 
   img {
     width: 300px;
@@ -74,6 +86,18 @@ export const Card = styled.div`
     font-weight: bold;
     text-align: center;
     font-size: 25px;
+  }
+  div {
+    height: 300px;
+    ${(props) =>
+      props.simulation
+        ? css`
+            display: flex;
+            flex-direction: column;
+          `
+        : css`
+            display: none;
+          `};
   }
   span {
     margin-top: 10px;
@@ -143,6 +167,10 @@ export const SelectCode = styled.div`
   margin-left: 18px;
   margin-right: 18px;
   width: 120px;
+
+  & > div {
+    margin-top: 10px;
+  }
 `;
 
 export const Duration = styled.input`
